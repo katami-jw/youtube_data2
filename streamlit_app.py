@@ -18,7 +18,7 @@ if uploaded_file is not None:
     st.sidebar.write('フィルター設定')
     date_start = st.sidebar.date_input('開始日',value=video_data['date'].min(), min_value=video_data['date'].min())
     date_end = st.sidebar.date_input('終了日')
-    view_min = st.sidebar.number_input('再生数下限')
+    view_min = st.sidebar.number_input('再生数下限',step=100)
 
     #フィルター後のデータ
     data = video_data.query('@date_end >= date >= @date_start & view_count > @view_min')
